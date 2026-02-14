@@ -12,7 +12,7 @@
     <section id="login-screen" class="container-box">
         <div class="header">
             <img src="logobuyuk (1).png" alt="Logo" class="logo">
-            <h2>Faz Ödevi: AI ve Hukuk</h2>
+            <h2>Faz Ödevi: Ceza Hukukunun Temel Prensipleri</h2>
         </div>
         <div class="content">
             <p>Testi başlatmak ve skorunuzu kaydetmek için adınızı giriniz.</p>
@@ -23,7 +23,7 @@
 
     <section id="game-screen" class="container-box hidden">
         <div class="game-header">
-            <h3>Kavramları Tanımlarla Eşleştirin</h3>
+            <h3>Kavramları Örnek Olaylarla Eşleştirin</h3>
             <p>Kartları ilgili kutucuğun üzerine sürükleyip bırakın.</p>
         </div>
         
@@ -49,10 +49,12 @@
     <script>
         // Madde ekleme alanı
         const questions = [
-            { id: 1, term: "Denetimli Öğrenme", desc: "Etiketlenmiş verilerle model eğitme yöntemidir." },
-            { id: 2, term: "Denetimsiz Öğrenme", desc: "Verideki gizli yapıları ve grupları bulmaya yarar." },
-            { id: 3, term: "Pekiştirmeli Öğrenme", desc: "Deneme-yanılma ve ödül mekanizmasıyla öğrenir." },
-            { id: 4, term: "KVKK Madde 11", desc: "İlgili kişinin haklarını düzenleyen maddedir." }
+            { id: 1, term: "Kanunilik İlkesi", desc: "Mehmet, 2023 yılında işlediği bir fiil nedeniyle hakkında dava açılır. Ancak o tarihte yürürlükte bulunan kanunda bu fiil suç olarak düzenlenmemiştir. 2025 yılında yapılan kanun değişikliğiyle söz konusu fiil suç haline getirilmiştir. Mahkeme, yeni kanuna dayanarak Mehmet’i cezalandırmak istemektedir. Bu olayda, avukat olduğunuzu varsayarak hazırlayacağınız savunma dilekçesinde ceza hukukunun hangi temel ilkesinin ihlal edildiğini ileri sürebileceğinizi değerlendiriniz." },
+            { id: 2, term: "Kusur İlkesi", desc: "Ayşe, akıl hastalığı nedeniyle işlediği fiilin hukuki anlam ve sonuçlarını algılayamayacak durumdadır. Buna rağmen mahkeme tarafından hapis cezasına mahkûm edilmek istenmektedir. Bu olayda, müdafi sıfatıyla kaleme alacağınız savunma dilekçesinde ceza sorumluluğunun temelini oluşturan hangi ilkeye dayanmanız gerektiğini belirtiniz." },
+            { id: 3, term: "Şahsilik İlkesi", desc: "Bir şirkette muhasebeci olarak çalışan Ali zimmet suçu işler. Şirket sahibi ise yalnızca suçun kendi şirketinde işlenmiş olması gerekçe gösterilerek, olaydan haberi olmamasına rağmen cezalandırılmak istenir. Bu durumda, savunma makamı olarak sunacağınız dilekçede ceza sorumluluğunun kapsamına ilişkin hangi temel ilkeye dayanacağınızı açıklayınız." },
+            { id: 4, term: "Masumiyet Karinesi", desc: "Bir kişi hakkında ağır ceza mahkemesinde yargılama devam etmektedir ve henüz kesinleşmiş bir hüküm bulunmamaktadır. Buna rağmen bir kamu kurumu, kişiyi “suçlu” ilan ederek görevine son verir ve kamuoyuna bu yönde açıklama yapar. Bu olayda, vekil sıfatıyla hazırlayacağınız dilekçede hangi temel ceza hukuku ilkesinin ihlal edildiğini ileri sürebileceğinizi değerlendiriniz." },
+			{ id: 5, term: "Orantılılık İlkesi", desc: "Bir kişi, marketten 50 TL değerinde bir ürün çalmıştır. Mahkeme, bu fiil nedeniyle sanığa 20 yıl hapis cezası vermiştir. Bu durumda, müdafi olarak sunacağınız savunma dilekçesinde verilen cezanın niteliğine karşı hangi temel ilkeye aykırılık iddiasında bulunabileceğinizi belirtiniz." },
+			{ id: 6, term: "Aleyhe Kıyas Yasağı", desc: "Kanunda “bilişim sistemine girme” suçu düzenlenmiştir. Ancak bir kişi, kanunda açıkça suç olarak tanımlanmamış bir dijital davranışta bulunur. Mahkeme, bu fiilin mevcut suça benzediğini belirterek kıyas yoluyla cezalandırma yoluna gider. Bu olayda, savunma dilekçenizde ceza hukukunda yorum ve kıyas sınırlarına ilişkin hangi temel ilkenin ihlal edildiğini ileri sürebileceğinizi değerlendiriniz." },
         ];
 
         let userName = "";
@@ -74,7 +76,7 @@
             const dragContainer = document.getElementById('draggables');
             const targetContainer = document.getElementById('targets');
 
-            // Kartları karıştırarak oluştur
+            // Kartları karıştırarak oluşturmak için
             [...questions].sort(() => Math.random() - 0.5).forEach(q => {
                 const card = document.createElement('div');
                 card.className = 'card';
@@ -85,7 +87,7 @@
                 dragContainer.appendChild(card);
             });
 
-            // Hedef alanları oluştur
+           
             questions.forEach(q => {
                 const target = document.createElement('div');
                 target.className = 'target-box';
@@ -135,7 +137,7 @@
 
             try {
                 // SHEETDB API entegrasyonu
-                const response = await fetch('Apı url'i yapıştırabilirsiniz', {
+                const response = await fetch('SheetApı url alanınız', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
@@ -151,3 +153,10 @@
 </body>
 
 </html>
+
+
+
+</body>
+
+</html>
+
